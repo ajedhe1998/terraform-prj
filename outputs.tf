@@ -1,0 +1,19 @@
+output "backend_ecr_url" {
+  value = aws_ecr_repository.backend.repository_url
+}
+
+output "frontend_ecr_url" {
+  value = aws_ecr_repository.frontend.repository_url
+}
+
+output "ecs_cluster_name" {
+  value = aws_ecs_cluster.main.name
+}
+
+output "ecs_service_name" {
+  value = aws_ecs_service.app.name
+}
+
+output "ecs_task_family" {
+  value = aws_ecs_task_definition.app.family
+}
