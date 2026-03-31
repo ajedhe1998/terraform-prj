@@ -14,7 +14,7 @@ variable "backend_port" {
 }
 
 variable "frontend_port" {
-  type = number
+  type    = number
   default = 80
 }
 

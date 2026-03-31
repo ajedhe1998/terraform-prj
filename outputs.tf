@@ -17,3 +17,6 @@ output "ecs_service_name" {
 output "ecs_task_family" {
   value = aws_ecs_task_definition.app.family
 }
+output "alb_dns_name" {
+  value = aws_lb.main.dns_name
+}
