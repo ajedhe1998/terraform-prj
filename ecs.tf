@@ -71,5 +71,14 @@ resource "aws_ecs_service" "app" {
     container_port   = var.frontend_port
   }
 
-  depends_on = [aws_lb_listener.http]
+  load_balancer {
+    target_group_arn = aws_lb_target_group.backend.arn
+    container_name   = "backend"
+    container_port   = var.backend_port
+  }
+
+  depends_on = [
+    aws_lb_listener.http,
+    aws_lb_listener_rule.backend_chat
+  ]
 }
